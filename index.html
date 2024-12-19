@@ -22,18 +22,22 @@
         header {
             text-align: center;
             margin: 20px 0;
+            display: flex;
+            justify-content: space-between; /* Aligns items to both sides */
+            width: 100%; /* Full width for header */
+            padding: 0 20px; /* Optional padding */
         }
 
-        header img {
+        h1 img {
             width: auto;
             height: auto;
-            max-width: 150px; /* Or the desired size */
-            max-height: 150px; /* Or the desired size */
-            border-radius: 50%; /* For a circular image */
+            max-width: 150px; 
+            max-height: 150px; 
+            border-radius: 50%; 
             border: 3px solid #333;
         }
 
-        header h1 {
+        header h2 {
             margin: 15px 0 5px;
             font-size: 2rem;
         }
@@ -41,6 +45,22 @@
         header p {
             font-size: 1.2rem;
             color: #666;
+        }
+
+        .cta-left, .cta-right {
+            display: flex; /* Flex container for CTAs */
+        }
+
+        .cta-left a, .cta-right a {
+            margin-left: 15px;
+            margin-right: 10px; /* Space between CTAs */
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #0077b5;
+        }
+
+        .cta-left a:hover, .cta-right a:hover {
+            text-decoration: underline;
         }
 
         main {
@@ -73,17 +93,30 @@
 </head>
 <body>
     <header>
-        <img src="Krishna.jpg" alt="Krishna K's Photo">
-        <h1>
-            Krishna K
-            <a href="resume.html" style="text-decoration: none; margin-left: 8px;">
+       <div class="cta-left">
+            <a href="product_management_blogs.html">Product Management Blogs</a>
+            <a href="wellbeing_blogs.html">Wellbeing Blogs</a>
+        </div>
+        
+        
+
+        <div class="cta-right"> 
+            <a href="general_blogs.html">General Blogs</a>
+            <a href="food_for_thought.html">Food for Thought</a>
+        </div>
+
+    </header>
+
+    <h1><img src="Krishna.jpg" alt="Krishna K's Photo"></h1>
+
+    <h2>
+        Krishna K
+        <a href="resume.html" style="text-decoration: none; margin-left: 8px;">
                 <video src="cv.mp4" autoplay muted loop style="width: 40px; height: 40px; vertical-align: middle;" aria-label="PDF icon"></video>
                 </a>
-        </h1>
+    </h2>
 
-
-        <p>Product Manager | Himalayan Trekker | Explorational Swimmer</p>
-    </header>
+    <p>Product Manager | Himalayan Trekker | Explorational Swimmer</p>
 
     <main>
         <section>
