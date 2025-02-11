@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food for Thought</title>
+    <title id="page-title">Food for Thought</title>
     <link rel="icon" href="favicon_1.ico" type="image/x-icon">
     <style>
         body {
@@ -51,10 +51,12 @@
         const params = new URLSearchParams(window.location.search);
         const id = params.get('id');
         const container = document.getElementById('entries');
+        const pageTitle = document.getElementById('page-title');
 
         if (id) {
             const entry = entries.find(e => e.id === id);
             if (entry) {
+                pageTitle.textContent = entry.title; // Update page title
                 container.innerHTML = `<div class="entry">
                     <h2>${entry.title}</h2>
                     <p class="date">${entry.date}</p>
