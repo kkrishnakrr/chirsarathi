@@ -4,9 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food for Thought</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        .entry {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .entry h2 {
+            margin: 0;
+        }
+        .entry p {
+            margin: 5px 0 0;
+        }
+        .date {
+            color: #777;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Food for Thought</h1>
-    <p>Content for Food for Thought will go here.</p>
+    <div class="container">
+        <h1>Food for Thought</h1>
+        <div id="entries"></div>
+    </div>
+
+    <script>
+        const entries = [
+            { id: 'habit', title: 'Power of Habit', date: '2025-02-11', content: 'Small habits compound over time to create lasting change.' },
+            { id: 'focus', title: 'Deep Work', date: '2025-02-10', content: 'Eliminate distractions and focus deeply to achieve mastery.' }
+        ];
+
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+        const container = document.getElementById('entries');
+
+        if (id) {
+            const entry = entries.find(e => e.id === id);
+            if (entry) {
+                container.innerHTML = `<div class="entry">
+                    <h2>${entry.title}</h2>
+                    <p class="date">${entry.date}</p>
+                    <p>${entry.content}</p>
+                </div>`;
+            } else {
+                container.innerHTML = '<p>Entry not found.</p>';
+            }
+        } else {
+            entries.forEach(entry => {
+                container.innerHTML += `<div class="entry">
+                    <h2><a href="?id=${entry.id}">${entry.title}</a></h2>
+                    <p class="date">${entry.date}</p>
+                    <p>${entry.content}</p>
+                </div>`;
+            });
+        }
+    </script>
 </body>
 </html>
