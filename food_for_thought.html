@@ -29,6 +29,7 @@
         }
         .entry p {
             margin: 5px 0 0;
+            white-space: pre-line;
         }
         .date {
             color: #777;
@@ -44,24 +45,9 @@
 
     <script>
         const entries = [
-            //#1
-            { id: 'temporal', title: 'Temporal Paradox', date: '2025-02-11', content: '<strong>Embracing the Speed of Time: A beautiful reflection</strong>. 
-
-Have you ever noticed how as we age, time seems to slip through our fingers like grains of sand? Each passing year feels like a mere blink compared to the vast expanse of our earlier years. Reflecting on this phenomenon, I'm struck by the profound wisdom it holds.
-
-Think of the year 19 in COVID'19, it is half a decade now or the ongoing conflict between Russia and Ukraine, which now stretches beyond years. It's astonishing how swiftly time moves, carrying with it the weight of our experiences and memories.
-
-I recently came across an insightful perspective on this temporal paradox: the older we become, the faster time appears to pass.
-
-How?
-
-Because each passing year represents a smaller fraction of our total life experience. Think about it: for a 9-year-old, their 10th year comprises one-tenth of their entire life. But for someone who's 19, that same year constitutes just one-twentieth of their existence.
-
-This realisation offers a poignant reminder to savour each moment, to infuse our days with purpose and meaning.
-#temporalparadox ⏳' },
-
-        //#2
-            { id: 'focus', title: 'Deep Work', date: '2025-02-10', content: 'Eliminate distractions and focus deeply to achieve mastery.' }
+            { id: 'habit', title: 'Power of Habit', date: '2025-02-11', content: 'Small habits compound over time to create lasting change.\n\nThis is how progress is made: little by little, step by step.' },
+            { id: 'focus', title: 'Deep Work', date: '2025-02-10', content: 'Eliminate distractions and focus deeply to achieve mastery.\n\nConcentration is the key to unlocking new levels of productivity.' },
+            { id: 'frost', title: 'The Road Not Taken', date: '2025-02-09', content: 'Two roads diverged in a yellow wood,\nAnd sorry I could not travel both\nAnd be one traveler, long I stood\nAnd looked down one as far as I could\nTo where it bent in the undergrowth;\n\nThen took the other, as just as fair,\nAnd having perhaps the better claim,\nBecause it was grassy and wanted wear;\nThough as for that the passing there\nHad worn them really about the same.' }
         ];
 
         const params = new URLSearchParams(window.location.search);
